@@ -15,6 +15,9 @@ mv ./sonar_replaced.properties ./sonar.properties
 
 echo "------------------------------------------------------" > /home/vcap/app/sonarqube/logs/sonar.log
 
+echo "-----> Syncing cacerts
+cp /home/vcap/app/sonarqube/cacerts /home/vcap/app/.java/jre/lib/security/cacerts
+
 echo "-----> Starting SonarQube"
 
 /home/vcap/app/sonarqube/bin/linux-x86-64/sonar.sh start
